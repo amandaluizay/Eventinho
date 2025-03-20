@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7FF45A2D-ABAB-4AC7-B40F-9FA460D11D22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventinho.Domain", "Eventinho.Domain\Eventinho.Domain.csproj", "{7865491F-46AC-479C-87FE-BBE0D71F0FED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{2410B057-6A18-4C97-9A46-7BD953865A48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventinho.Database", "Eventinho.Database\Eventinho.Database.csproj", "{235B96B7-7B0F-4182-AB98-B3253EEAD341}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7865491F-46AC-479C-87FE-BBE0D71F0FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7865491F-46AC-479C-87FE-BBE0D71F0FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7865491F-46AC-479C-87FE-BBE0D71F0FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7865491F-46AC-479C-87FE-BBE0D71F0FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235B96B7-7B0F-4182-AB98-B3253EEAD341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235B96B7-7B0F-4182-AB98-B3253EEAD341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235B96B7-7B0F-4182-AB98-B3253EEAD341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235B96B7-7B0F-4182-AB98-B3253EEAD341}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7865491F-46AC-479C-87FE-BBE0D71F0FED} = {7FF45A2D-ABAB-4AC7-B40F-9FA460D11D22}
+		{235B96B7-7B0F-4182-AB98-B3253EEAD341} = {2410B057-6A18-4C97-9A46-7BD953865A48}
+	EndGlobalSection
+EndGlobal
