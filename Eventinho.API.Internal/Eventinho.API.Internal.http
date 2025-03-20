@@ -1,0 +1,6 @@
+@Eventinho.API.Internal_HostAddress = http://localhost:5070
+
+GET {{Eventinho.API.Internal_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

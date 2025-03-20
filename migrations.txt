@@ -1,0 +1,7 @@
+dotnet tool install --global dotnet-ef
+
+dotnet ef migrations add Initial --context EventinhoDbcontext --project Eventinho.Database\Eventinho.Database.csproj --startup-project Eventinho.API.Internal\Eventinho.API.Internal.csproj
+
+dotnet ef database update --context EventinhoDbcontext --project Eventinho.Database\Eventinho.Database.csproj --startup-project Eventinho.API.Internal\Eventinho.API.Internal.csproj
+
+dotnet ef migrations Remove --context EventinhoDbcontext --project Eventinho.Database\Eventinho.Database.csproj --startup-project Eventinho.API.Internal\Eventinho.API.Internal.csproj
