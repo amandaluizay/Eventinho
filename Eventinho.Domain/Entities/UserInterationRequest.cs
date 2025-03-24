@@ -4,12 +4,14 @@ namespace Eventinho.Domain.Entities
 {
     public class UserInterationRequest : Entity
     {
-        public User User_Sender { get; set; }
-        public Guid User_SenderId { get; set; }
+        public User UserSender { get; set; }
+        public Guid UserSenderId { get; set; }
 
-        public User User_Receiver { get; set; }
-        public Guid User_ReceiverId { get; set; }
+        public User UserReceiver { get; set; }
+        public Guid UserReceiverId { get; set; }
 
         public EInterationType Type { get; set; }
+
+        public EState State { get; set; }
     }
 }

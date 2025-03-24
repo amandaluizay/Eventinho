@@ -6,11 +6,12 @@ namespace Eventinho.Database
 {
     public class EventinhoDbcontext : DbContext
     {
-        DbSet<User> Users { get; set; }
-        DbSet<Event> Events { get; set; }
-        DbSet<Guest> Guests { get; set; }
-        DbSet<UserNotification> UserNotifications { get; set; }
-        DbSet<UserInterationRequest> UserInterationRequests { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<EventColaborator> EventColaborators { get; set; }
+        public DbSet<Guest> Guests { get; set; }
+        public DbSet<UserNotification> UserNotifications { get; set; }
+        public DbSet<UserInterationRequest> UserInterationRequests { get; set; }
 
         public EventinhoDbcontext(DbContextOptions<EventinhoDbcontext> options) : base(options)
         {
@@ -19,6 +20,18 @@ namespace Eventinho.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+                        .HasMany(a => a.SenderRequests)
+                        .WithOne(a => a.UserSender)
+                        .HasForeignKey(a => a.UserSenderId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<User>()
+                        .HasMany(a => a.ReceiverRequests)
+                        .WithOne(a => a.UserReceiver)
+                        .HasForeignKey(a => a.UserReceiverId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
             base.OnModelCreating(modelBuilder);
         }
 

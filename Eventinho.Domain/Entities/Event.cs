@@ -11,7 +11,7 @@
         public User Owner { get; set; }
         public Guid OwnerId { get; set; }
 
-        public List<User>? Colaborators { get; set; }
+        public List<EventColaborator>? Colaborators { get; set; }
         public List<Guest>? Guests { get; set; }
     }
 }

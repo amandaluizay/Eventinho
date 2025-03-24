@@ -4,30 +4,30 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Eventinho.Database.EntitiesConfiguration
 {
-    internal class GuestEntityConfiguration : IEntityTypeConfiguration<Guest>
+    internal class EventColaboratorEntityConfiguration : IEntityTypeConfiguration<EventColaborator>
     {
-        public void Configure(EntityTypeBuilder<Guest> builder)
-        {
-            builder.ToTable("guests");
-
+        public void Configure(EntityTypeBuilder<EventColaborator> builder)
+        { 
+            builder.ToTable("event_colaborators");
             builder.HasKey(x => x.Id);
             builder.Property(i => i.CreatedAt).IsRequired();
             builder.Property(i => i.CreatedBy).IsRequired();
             builder.Property(i => i.UpdatedBy);
             builder.Property(i => i.UpdatedAt);
-            builder.Property(i => i.EventId).IsRequired();
-            builder.Property(i => i.UserId).IsRequired();
-            builder.Property(i => i.State).IsRequired();
-            
+
+            builder.Property(i => i.EventId);
+            builder.Property(i => i.UserId);
+
             builder.HasOne(i => i.Event)
-                   .WithMany(i => i.Guests)
+                   .WithMany(i => i.Colaborators)
                    .HasForeignKey(i => i.EventId)
                    .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(i => i.User)
-                   .WithMany(i => i.EventGuests)
+                   .WithMany(i => i.EventColaborators)
                    .HasForeignKey(i => i.UserId)
-                   .OnDelete(DeleteBehavior.NoAction);
+                    .OnDelete(DeleteBehavior.NoAction);
         }
+
     }
 }

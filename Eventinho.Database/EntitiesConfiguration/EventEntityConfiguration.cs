@@ -25,11 +25,13 @@ namespace Eventinho.Database.EntitiesConfiguration
 
             builder.HasOne(i => i.Owner)
                    .WithMany(i=> i.Events)
-                   .HasForeignKey(i => i.OwnerId);
+                   .HasForeignKey(i => i.OwnerId)
+                   .OnDelete(DeleteBehavior.NoAction);
 
-            builder.HasMany(e => e.Colaborators)
-                   .WithMany(u => u.Events)
-                   .UsingEntity(j => j.ToTable("EventColaborators"));
+            builder.HasMany(i => i.Colaborators)
+                   .WithOne(i => i.Event)
+                   .HasForeignKey(i => i.EventId)
+                   .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
