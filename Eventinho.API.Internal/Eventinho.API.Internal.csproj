@@ -26,10 +26,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Eventinho.Database\Eventinho.Database.csproj" />
 	  <ProjectReference Include="..\Eventinho.Domain\Eventinho.Domain.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Controllers\" />
+	  <ProjectReference Include="..\Eventinho.Ioc\Eventinho.Ioc.csproj" />
 	</ItemGroup>
 
 </Project>
