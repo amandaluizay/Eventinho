@@ -2,11 +2,14 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using Eventinho.Share;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Eventinho.Shared.Interfaces;
+using Eventinho.Shared.Configuration;
+using Eventinho.Shared.Services;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Eventinho.Ioc
 {
@@ -38,23 +41,27 @@ namespace Eventinho.Ioc
 
         private static IServiceCollection AddAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddAuthentication(opt =>
-            {
-                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                var key = configuration["Jwt:Key"];
+            services.Configure<TokenConfig>(config => configuration.GetRequiredSection(nameof(TokenConfig)).Bind(config));
 
-                options.TokenValidationParameters = new TokenValidationParameters
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                var key = configuration["TokenConfig:Key"];
+                var asciiKey = Encoding.ASCII.GetBytes(key);
+
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
-                    ClockSkew = TimeSpan.Zero,
+                    ValidateAudience = false,
+                    IssuerSigningKey = new SymmetricSecurityKey(asciiKey),
+                    ValidateIssuer = false
                 };
             });
+
+            services.AddTransient<ITokenService, TokenService>();
 
             return services;
         }

@@ -1,4 +1,4 @@
-﻿namespace Eventinho.Share
+﻿namespace Eventinho.Shared.Configuration
 {
     public class DbConfig
     {

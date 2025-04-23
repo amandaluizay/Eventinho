@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventinho.Ioc", "Eventinho.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{01A15AC5-8261-438C-9F7F-6000BA5D403F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventinho.Share", "Eventinho.Share\Eventinho.Share.csproj", "{B38EECE5-BB9A-4574-87EA-712BE3C56278}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventinho.Shared", "Eventinho.Share\Eventinho.Shared.csproj", "{B38EECE5-BB9A-4574-87EA-712BE3C56278}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,7 +14,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Eventinho.Database\Eventinho.Database.csproj" />
-		<ProjectReference Include="..\Eventinho.Share\Eventinho.Share.csproj" />
+		<ProjectReference Include="..\Eventinho.Share\Eventinho.Shared.csproj" />
 	</ItemGroup>
 
 </Project>
