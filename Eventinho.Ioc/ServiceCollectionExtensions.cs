@@ -10,6 +10,8 @@ using Eventinho.Shared.Interfaces;
 using Eventinho.Shared.Configuration;
 using Eventinho.Shared.Services;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Eventinho.Database.Repository;
+using Eventinho.Domain.Interfaces.Repository;
 
 namespace Eventinho.Ioc
 {
@@ -36,6 +38,9 @@ namespace Eventinho.Ioc
                 options.UseSqlServer(connectionString);
             });
 
+            services.AddScoped<IUnitOfWork, EFUnitOfWork>();
+            services.AddScoped(typeof(IRepository<>), typeof(EFRepository<>));
+
             return services;
         }
 
@@ -61,9 +66,12 @@ namespace Eventinho.Ioc
                 };
             });
 
-            services.AddTransient<ITokenService, TokenService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddHttpContextAccessor();
 
             return services;
         }
+
+
     }
 }

@@ -27,6 +27,8 @@
 	  <ProjectReference Include="..\Eventinho.Database\Eventinho.Database.csproj" />
 	  <ProjectReference Include="..\Eventinho.Domain\Eventinho.Domain.csproj" />
 	  <ProjectReference Include="..\Eventinho.Ioc\Eventinho.Ioc.csproj" />
+	  <ProjectReference Include="..\Eventinho.Share\Eventinho.Shared.csproj" />
+	  <ProjectReference Include="..\EventinhoApplication\EventinhoApplication.csproj" />
 	</ItemGroup>
 
 </Project>

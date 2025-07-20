@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7FF45A2D-ABAB-4AC7-B40F-9FA460D11D22}"
-	ProjectSection(SolutionItems) = preProject
-		Eventinho.API.Internal\WeatherForecast.cs = Eventinho.API.Internal\WeatherForecast.cs
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventinho.Domain", "Eventinho.Domain\Eventinho.Domain.csproj", "{7865491F-46AC-479C-87FE-BBE0D71F0FED}"
 EndProject
@@ -30,6 +27,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{01A15AC5-8261-438C-9F7F-6000BA5D403F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventinho.Shared", "Eventinho.Share\Eventinho.Shared.csproj", "{B38EECE5-BB9A-4574-87EA-712BE3C56278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventinhoApplication", "EventinhoApplication\EventinhoApplication.csproj", "{03C846CC-DC4A-4EE1-AE8D-BBE4BE4D3A87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteJWT", "TesteJWT\TesteJWT.csproj", "{75C1A37A-21C0-41CF-8E12-3EE982FD4E9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +58,14 @@ Global
 		{B38EECE5-BB9A-4574-87EA-712BE3C56278}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B38EECE5-BB9A-4574-87EA-712BE3C56278}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B38EECE5-BB9A-4574-87EA-712BE3C56278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C846CC-DC4A-4EE1-AE8D-BBE4BE4D3A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C846CC-DC4A-4EE1-AE8D-BBE4BE4D3A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C846CC-DC4A-4EE1-AE8D-BBE4BE4D3A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C846CC-DC4A-4EE1-AE8D-BBE4BE4D3A87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C1A37A-21C0-41CF-8E12-3EE982FD4E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C1A37A-21C0-41CF-8E12-3EE982FD4E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C1A37A-21C0-41CF-8E12-3EE982FD4E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C1A37A-21C0-41CF-8E12-3EE982FD4E9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +76,6 @@ Global
 		{04C8E632-55C3-4620-91FD-FD5225C3316D} = {F222303B-E192-441D-85AF-08139992AE20}
 		{08536163-C240-4F62-945B-3FB5AE8D4E45} = {A59C80E4-0E0E-40E0-ADE4-1890FD7B16AF}
 		{B38EECE5-BB9A-4574-87EA-712BE3C56278} = {01A15AC5-8261-438C-9F7F-6000BA5D403F}
+		{03C846CC-DC4A-4EE1-AE8D-BBE4BE4D3A87} = {7FF45A2D-ABAB-4AC7-B40F-9FA460D11D22}
 	EndGlobalSection
 EndGlobal

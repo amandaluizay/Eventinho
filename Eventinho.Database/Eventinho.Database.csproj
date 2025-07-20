@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Eventinho.Domain\Eventinho.Domain.csproj" />
+    <ProjectReference Include="..\Eventinho.Share\Eventinho.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,13 @@
 ﻿using Eventinho.Domain.Entities;
 using Eventinho.Domain.Interfaces;
+using Eventinho.Shared.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Eventinho.Database
 {
     public class EventinhoDbcontext : DbContext
     {
+        private readonly IUserContextService _userService;
         public DbSet<User> Users { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<EventColaborator> EventColaborators { get; set; }
@@ -13,9 +15,9 @@ namespace Eventinho.Database
         public DbSet<UserNotification> UserNotifications { get; set; }
         public DbSet<UserInterationRequest> UserInterationRequests { get; set; }
 
-        public EventinhoDbcontext(DbContextOptions<EventinhoDbcontext> options) : base(options)
+        public EventinhoDbcontext(DbContextOptions<EventinhoDbcontext> options , IUserContextService userService) : base(options)
         {
-            
+            _userService = userService;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,10 +45,12 @@ namespace Eventinho.Database
                 {
                     case EntityState.Added:
                         entry.Entity.CreatedAt = DateTime.UtcNow;
+                        entry.Entity.CreatedBy = _userService.GetCurrentUserName();
                         break;
 
                     case EntityState.Modified:
                         entry.Entity.UpdatedAt = DateTime.UtcNow;
+                        entry.Entity.UpdatedBy = _userService.GetCurrentUserName();
                         break;
                 }
             }

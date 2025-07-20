@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Eventinho.Domain\Eventinho.Domain.csproj" />
+    <ProjectReference Include="..\Eventinho.Ioc\Eventinho.Ioc.csproj" />
+    <ProjectReference Include="..\Eventinho.Share\Eventinho.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
