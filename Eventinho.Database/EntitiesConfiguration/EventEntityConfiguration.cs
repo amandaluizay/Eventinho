@@ -28,7 +28,7 @@ namespace Eventinho.Database.EntitiesConfiguration
                    .HasForeignKey(i => i.OwnerId)
                    .OnDelete(DeleteBehavior.NoAction);
 
-            builder.HasMany(i => i.Colaborators)
+            builder.HasMany(i => i.Moderators)
                    .WithOne(i => i.Event)
                    .HasForeignKey(i => i.EventId)
                    .OnDelete(DeleteBehavior.NoAction);

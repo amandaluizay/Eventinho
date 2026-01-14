@@ -1,7 +1,6 @@
 ﻿using Eventinho.Domain.Entities;
 using Eventinho.Domain.Interfaces.Repository;
 using Eventinho.Shared.Interfaces;
-using Eventinho.Shared.Services;
 using EventinhoApplication.Interfaces;
 using EventinhoApplication.Models;
 

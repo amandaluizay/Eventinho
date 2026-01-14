@@ -10,7 +10,7 @@ namespace Eventinho.Database
         private readonly IUserContextService _userService;
         public DbSet<User> Users { get; set; }
         public DbSet<Event> Events { get; set; }
-        public DbSet<EventColaborator> EventColaborators { get; set; }
+        public DbSet<EventModerator> EventColaborators { get; set; }
         public DbSet<Guest> Guests { get; set; }
         public DbSet<UserNotification> UserNotifications { get; set; }
         public DbSet<UserInterationRequest> UserInterationRequests { get; set; }

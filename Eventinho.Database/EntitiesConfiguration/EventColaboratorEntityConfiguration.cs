@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Eventinho.Database.EntitiesConfiguration
 {
-    internal class EventColaboratorEntityConfiguration : IEntityTypeConfiguration<EventColaborator>
+    internal class EventColaboratorEntityConfiguration : IEntityTypeConfiguration<EventModerator>
     {
-        public void Configure(EntityTypeBuilder<EventColaborator> builder)
+        public void Configure(EntityTypeBuilder<EventModerator> builder)
         { 
             builder.ToTable("event_colaborators");
             builder.HasKey(x => x.Id);
@@ -19,7 +19,7 @@ namespace Eventinho.Database.EntitiesConfiguration
             builder.Property(i => i.UserId);
 
             builder.HasOne(i => i.Event)
-                   .WithMany(i => i.Colaborators)
+                   .WithMany(i => i.Moderators)
                    .HasForeignKey(i => i.EventId)
                    .OnDelete(DeleteBehavior.NoAction);
 
